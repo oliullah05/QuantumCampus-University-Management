@@ -1,3 +1,4 @@
+import MainLayout from "./components/layouts/MainLayout"
 
 
 function App() {
@@ -5,7 +6,8 @@ function App() {
 
   return (
     <>
-    <h1>PH University Management app</h1>
+    <h1>QuantumCampus University Management Web App</h1>
+    <MainLayout></MainLayout>
     </>
   )
 }
