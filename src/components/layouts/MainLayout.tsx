@@ -45,7 +45,7 @@ const MainLayout = () => {
           console.log(collapsed, type);
         }}
       >
-        <div style={{color:"white",padding:"20px",height:"5rem",textAlign:"center"}}> QuantumCampus University</div>
+        <div style={{color:"white",padding:"20px",height:"5rem",textAlign:"center",display:"flex",justifyContent:"center",alignItems:"center"}}> QuantumCampus University</div>
         <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} items={items} />
       </Sider>
       <Layout>
