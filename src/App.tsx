@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-    <h1>QuantumCampus University Management Web App</h1>
+    {/* <h1>QuantumCampus University Management Web App</h1> */}
     <MainLayout></MainLayout>
     </>
   )

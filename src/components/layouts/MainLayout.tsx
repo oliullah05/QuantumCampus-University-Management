@@ -1,24 +1,40 @@
-import React from 'react';
-import { UploadOutlined, UserOutlined, VideoCameraOutlined } from '@ant-design/icons';
-import { Layout, Menu, theme } from 'antd';
-
+import { Layout, Menu, MenuProps } from "antd";
 const { Header, Content, Footer, Sider } = Layout;
 
-const items = [UserOutlined, VideoCameraOutlined, UploadOutlined, UserOutlined].map(
-  (icon, index) => ({
-    key: String(index + 1),
-    icon: React.createElement(icon),
-    label: `nav ${index + 1}`,
-  }),
-);
 
-const MainLayout: React.FC = () => {
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
+const items:MenuProps['items'] = [
+  {
+    key: "1",
+    label: "Dashboard"
+  },
+  {
+    key: "2",
+    label: "Profile"
+  },
+  {
+    key: "3",
+    label: "User Management",
+    children:[
+      {
+        key:"11",
+        label:"dropdown 1"
+      },
+      {
+        key:"12",
+        label:"dropdown 2"
+      },
+      {
+        key:"13",
+        label:"dropdown 3"
+      }
+    ]
+  }
+]
 
+
+const MainLayout = () => {
   return (
-    <Layout>
+    <Layout style={{ height: "100vh" }}>
       <Sider
         breakpoint="lg"
         collapsedWidth="0"
@@ -29,18 +45,16 @@ const MainLayout: React.FC = () => {
           console.log(collapsed, type);
         }}
       >
-        <div className="demo-logo-vertical" />
-        <Menu theme="dark" mode="inline" defaultSelectedKeys={['4']} items={items} />
+        <div style={{color:"white",padding:"20px",height:"5rem",textAlign:"center"}}> QuantumCampus University</div>
+        <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']} items={items} />
       </Sider>
       <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }} />
+        <Header style={{ padding: 0, }} />
         <Content style={{ margin: '24px 16px 0' }}>
           <div
             style={{
               padding: 24,
-              minHeight: 360,
-              background: colorBgContainer,
-              borderRadius: borderRadiusLG,
+              minHeight: 360
             }}
           >
             content
