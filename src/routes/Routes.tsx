@@ -1,50 +1,28 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import About from "../pages/About";
-import Contact from "../pages/Contact";
 import LogIn from "../pages/LogIn";
 import Register from "../pages/Register";
-import AdminDashboard from "./admin/AdminDashboard";
-import CreateStudent from "./admin/CreateStudent";
+import { adminPaths } from "./admin.routes";
 
 const router = createBrowserRouter([
     {
         path:"/",
-        element:<App></App>,
-        children:[
-            
-        
-            {
-                path:"contact",
-                element:<Contact></Contact>
-            },
-            
-            {
-                path:"about",
-                element:<About></About>
-            },
-        ]
+        element:<App></App>
     },
     {
         path:"/admin",
         element:<App></App>,
-        children:[
-            
-        
-            {
-                index:true,
-                element:<AdminDashboard></AdminDashboard>
-            },
-            {
-                path:"dashboard",
-                element:<AdminDashboard></AdminDashboard>
-            },
-            
-            {
-                path:"create-student",
-                element:<CreateStudent></CreateStudent>
-            },
-        ]
+        children:adminPaths
+    },
+    {
+        path:"/faculty",
+        element:<App></App>,
+        children:adminPaths
+    },
+    {
+        path:"/student",
+        element:<App></App>,
+        children:adminPaths
     },
     {
         path:"login",
