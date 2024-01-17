@@ -1,7 +1,7 @@
 
 const adminPath2 = [
     {
-        name: "dashboard",
+        name: "Dashboard",
         path: "dashboard",
         element: "<AdminDashboard/>"
     },
@@ -28,25 +28,45 @@ const adminPath2 = [
 ]
 
 
+// const newArrey = adminPath2.reduce((acc, item) => {
+//     if (item.path && item.element) {
+//         acc.push({
+//             path: item.path,
+//             element:item.element
+//         })
+//     }
+//     if(item.children){
+//         item.children.forEach(child=>{
+//             acc.push({
+//                 path: child.path,
+//                 element:child.element
+//             })
+//         })
+//     }
+//     return acc
+// }, [])
 const newArrey = adminPath2.reduce((acc, item) => {
-    if (item.path && item.element) {
+    if (item.path && item.name) {
         acc.push({
-            path: item.path,
-            element:item.element
+            key: item.name,
+            label:'navlink '
         })
     }
+
     if(item.children){
-        item.children.forEach(child=>{
-            acc.push({
-                path: child.path,
-                element:child.element
-            })
-        })
-    }
+                acc.push({
+                    key: item.name,
+                    level:item.name,
+                    children:item.children.map(child=>({
+                        key:child.name,
+                        label:"Navlink"
+                    }))
+                })
+            }
     return acc
 }, [])
 
-console.log(newArrey);
+console.log(JSON.stringify(newArrey));
 
 
 
