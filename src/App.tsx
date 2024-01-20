@@ -1,4 +1,5 @@
 import MainLayout from "./components/layouts/MainLayout"
+import ProtectedRoute from "./components/layouts/ProtectedRoute"
 
 
 function App() {
@@ -6,8 +7,8 @@ function App() {
 
   return (
     <>
-    {/* <h1>QuantumCampus University Management Web App</h1> */}
-    <MainLayout></MainLayout>
+  
+  <ProtectedRoute><MainLayout/></ProtectedRoute> 
     </>
   )
 }
