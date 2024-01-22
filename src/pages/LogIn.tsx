@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Button, Row } from "antd";
 import { FieldValues, useFormContext } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import QCForm from "../components/form/QCForm";
@@ -53,15 +53,17 @@ const navigate = useNavigate()
 
 
     return (
+        <Row justify="center" align="middle" style={{height:"100vh"}}>
         <QCForm onSubmit={onSubmit}>
             {/* <label htmlFor="id">ID:</label> */}
-            <QCInput type="password" name="userId" label={"id"}></QCInput>
+            <QCInput type="text" name="userId" label={"id"}></QCInput>
            
             {/* <input type="text" id="id" {...register("userId")} /> */}
-            {/* <label htmlFor="password">ID:</label> */}
-         <QCInput type="password" name="password" label={"password"}></QCInput>
+            {/* <label htmlFor="text">ID:</label> */}
+         <QCInput type="text" name="password" label={"password"}></QCInput>
             <Button htmlType="submit">LogIn</Button>
         </QCForm>
+        </Row>
     );
 };
 

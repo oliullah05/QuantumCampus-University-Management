@@ -1,15 +1,21 @@
 import { Input } from "antd";
-import { useFormContext } from "react-hook-form";
+import { Controller, useFormContext } from "react-hook-form";
 
 const QCInput = ({type,name,label}) => {
     const {register}=useFormContext()
-    return   <>
+    return   <div >
 
     {label ? label:null}
-    <Input type={type} id={name} {...register(name)} />
+    <Controller
+    name={name}
+      render={({field})=>(
+        <Input type={type} {...field} id={name} />
+      )}
+/>
+   
     
     
-    </>
+    </div>
 
 };
 
