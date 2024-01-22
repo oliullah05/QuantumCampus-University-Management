@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { Menu, MenuProps } from "antd";
 import Sider from "antd/es/layout/Sider";
-import { sidebarItemsGenarator } from "../../utils/sidebarItemsGenarator";
+import { selectCurrentuser } from "../../redux/features/auth/authSlice";
+import { useAppSelector } from "../../redux/hooks";
 import { adminPaths } from "../../routes/admin.routes";
 import { facultyPaths } from "../../routes/faculty.routes";
 import { studentPaths } from "../../routes/student.routes";
+import { sidebarItemsGenarator } from "../../utils/sidebarItemsGenarator";
 const AdminItems:MenuProps['items'] = sidebarItemsGenarator(adminPaths,"admin")
 const FacultyItems:MenuProps['items'] = sidebarItemsGenarator(facultyPaths,"faculty")
 const Studenttems:MenuProps['items'] = sidebarItemsGenarator(studentPaths,"student")
@@ -14,10 +16,10 @@ const useRole = {
     STUDENT:"student"
 };
 const SideBar = () => {
-  const role = "admin";
+ const user = useAppSelector(selectCurrentuser)
 
     let sidebarItems;
-    switch (role) {
+    switch (user!.role) {
         case useRole.ADMIN:
             sidebarItems = AdminItems
             break;
