@@ -1,12 +1,10 @@
 import { Button } from "antd";
-import { FieldValues, useForm } from "react-hook-form";
+import { FieldValues, useFormContext } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { toast } from 'sonner';
+import QCForm from "../components/form/QCForm";
 import { useLogInMutation } from "../redux/features/auth/authApi";
-import { TUser, setUser } from "../redux/features/auth/authSlice";
 import { useAppDispatch } from "../redux/hooks";
-import { verifyToken } from "../utils/verifyToken";
-import QuantumCampusForm from "../components/form/QuantumCampusForm";
+import QCInput from "../components/form/QCInput";
 const LogIn = () => {
     const [login] = useLogInMutation()
 const dispatch = useAppDispatch()
@@ -14,12 +12,15 @@ const navigate = useNavigate()
 
 
 
-    const { register, handleSubmit } = useForm({
-        defaultValues:{
-            userId:"A-0001",
-            password:"admin123"
-        }
-    })
+    // const { register, handleSubmit } = useForm({
+    //     defaultValues:{
+    //         userId:"A-0001",
+    //         password:"admin123"
+    //     }
+    // })
+
+// const {clearErrors} =useFormContext()
+
 
 
     const onSubmit =async (data:FieldValues) => {
@@ -52,13 +53,15 @@ const navigate = useNavigate()
 
 
     return (
-        <QuantumCampusForm onSubmit={onSubmit}>
-            <label htmlFor="id">ID:</label>
-            <input type="text" id="id" {...register("userId")} />
-            <label htmlFor="password">ID:</label>
-            <input type="password" id="password" {...register("password")} />
+        <QCForm onSubmit={onSubmit}>
+            {/* <label htmlFor="id">ID:</label> */}
+            <QCInput type="password" name="userId" label={"id"}></QCInput>
+           
+            {/* <input type="text" id="id" {...register("userId")} /> */}
+            {/* <label htmlFor="password">ID:</label> */}
+         <QCInput type="password" name="password" label={"password"}></QCInput>
             <Button htmlType="submit">LogIn</Button>
-        </QuantumCampusForm>
+        </QCForm>
     );
 };
 
