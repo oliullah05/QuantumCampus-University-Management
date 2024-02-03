@@ -1,25 +1,33 @@
-import { Form, Select, Space } from 'antd';
-import React from 'react';
+import { Form, Select } from 'antd';
+import { Controller } from 'react-hook-form';
 
-const QCSelect = ({label}) => {
-    const handleChange = (value: string) => {
-        console.log(`selected ${value}`);
-      };
+
+type QCSelectProps = {
+    label:string,
+    name:string,
+    options:{
+        value:string,
+        label:string,
+        disables?:boolean
+    }[]
+}
+
+
+const QCSelect = ({ label, name,options }: QCSelectProps) => {
+
     return (
-        <Form.Item label={label}>
-        <Select
-        
-          style={{ width: "100%" }}
-          onChange={handleChange}
-          options={[
-            { value: 'jack', label: 'Jack' },
-            { value: 'lucy', label: 'Lucy' },
-            { value: 'Yiminghe', label: 'yiminghe' },
-            { value: 'disabled', label: 'Disabled', disabled: true },
-          ]}
+        <Controller
+            name={name}
+            render={({field}) => (<Form.Item label={label}>
+
+                <Select
+                {...field}
+                    style={{ width: "100%" }}
+                    options={options}
+                />
+            </Form.Item>)}
         />
-        </Form.Item>
-     
+
     );
 };
 
