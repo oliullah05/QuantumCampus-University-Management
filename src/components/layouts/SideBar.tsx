@@ -41,13 +41,14 @@ const SideBar = () => {
 
     return (
         <Sider
+        style={{height:"100vh",position:"sticky",top:"0",left:"0"}}
         breakpoint="lg"
         collapsedWidth="0"
         onBreakpoint={(broken) => {
-          console.log(broken);
+          // console.log(broken);
         }}
         onCollapse={(collapsed, type) => {
-          console.log(collapsed, type);
+          // console.log(collapsed, type);
         }}
       >
         <div style={{color:"white",padding:"20px",height:"5rem",textAlign:"center",display:"flex",justifyContent:"center",alignItems:"center"}}> QuantumCampus University</div>

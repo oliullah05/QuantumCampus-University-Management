@@ -20,14 +20,26 @@ const nameOptions = [
     },
 ]
 
+
+const currentYear = new Date().getFullYear()
+const yearOptions = [0,1,2,3,4].map(number =>({
+
+    value: String(currentYear+number),
+    label: String(currentYear+number)
+  
+}))
+
+
 const CreateAcademicSemester = () => {
 
     const onSubmit: SubmitHandler<FieldValues> = (data) => {
-      const semesterData = {
-name:"sjdjk",
-code:"0"
-      }
-      console.log(semesterData);
+        const name = nameOptions[Number(data.name)-1]?.label
+        const semesterData = {
+            name,
+            code: data.name,
+            year:data.year
+        }
+        console.log(semesterData);
     }
 
 
@@ -35,10 +47,13 @@ code:"0"
 
 
     return (
-        <Flex justify="center" align="center">
+        <Flex justify="center" align="center" >
             <Col span={6}>
                 <QCForm onSubmit={onSubmit}>
                     <QCSelect options={nameOptions} label="Name" name="name"></QCSelect>
+                    <QCSelect options={yearOptions} label="Year" name="year"></QCSelect>
+                    <QCSelect options={nameOptions} label="Start Month" name="startMonth"></QCSelect>
+                    <QCSelect options={nameOptions} label="End Month" name="endMonth"></QCSelect>
                     <Button htmlType="submit">submit</Button>
                 </QCForm>
             </Col>

@@ -24,6 +24,7 @@ const QCSelect = ({ label, name,options }: QCSelectProps) => {
                 {...field}
                     style={{ width: "100%" }}
                     options={options}
+                    size='large'
                 />
             </Form.Item>)}
         />

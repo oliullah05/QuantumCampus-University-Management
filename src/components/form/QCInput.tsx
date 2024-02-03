@@ -14,7 +14,7 @@ const QCInput = ({ type, name, label }: TInputProps) => {
       name={name}
       render={({ field }) => (
         <Form.Item label={label}>
-          <Input type={type} {...field} id={name} />
+          <Input type={type} {...field} id={name} size="large" />
         </Form.Item>
       )}
     />
