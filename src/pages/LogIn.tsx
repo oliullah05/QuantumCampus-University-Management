@@ -1,10 +1,13 @@
 import { Button, Row } from "antd";
-import { FieldValues, useFormContext } from "react-hook-form";
+import { FieldValues, useForm, useFormContext } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import QCForm from "../components/form/QCForm";
 import { useLogInMutation } from "../redux/features/auth/authApi";
 import { useAppDispatch } from "../redux/hooks";
 import QCInput from "../components/form/QCInput";
+import { toast } from "sonner";
+import { verifyToken } from "../utils/verifyToken";
+import { setUser } from "../redux/features/auth/authSlice";
 const LogIn = () => {
     const [login] = useLogInMutation()
 const dispatch = useAppDispatch()
@@ -12,12 +15,12 @@ const navigate = useNavigate()
 
 
 
-    // const { register, handleSubmit } = useForm({
-    //     defaultValues:{
-    //         userId:"A-0001",
-    //         password:"admin123"
-    //     }
-    // })
+    const { register, handleSubmit } = useForm({
+        defaultValues:{
+            userId:"A-0003",
+            password:"111111"
+        }
+    })
 
 // const {clearErrors} =useFormContext()
 
@@ -25,23 +28,23 @@ const navigate = useNavigate()
 
     const onSubmit =async (data:FieldValues) => {
     console.log(data);
-//      const toastId =    toast.loading("Loggin in")
-//        try{
-//         const userInfo = {
-//             id:data.userId,
-//             password:data.password
-//         }
+     const toastId =    toast.loading("Loggin in")
+       try{
+        const userInfo = {
+            id:data.userId,
+            password:data.password
+        }
 
-//    const res =   await login(userInfo).unwrap();
-//    const user = verifyToken(res.data.accessToken) as TUser
-//    dispatch(setUser({user,token:res.data.accessToken}))
-//    toast.success("log in successfully",{id:toastId,duration:1500})
-//    navigate(`/${user.role}/dashboard`)
+   const res =   await login(userInfo).unwrap();
+   const user = verifyToken(res.data.accessToken) as TUser
+   dispatch(setUser({user,token:res.data.accessToken}))
+   toast.success("log in successfully",{id:toastId,duration:1500})
+   navigate(`/${user.role}/dashboard`)
    
-//        }
-//        catch(err){
-//         toast.error("something went wrong",{id:toastId,duration:1500})
-//        }
+       }
+       catch(err){
+        toast.error("something went wrong",{id:toastId,duration:1500})
+       }
 
 
     }
