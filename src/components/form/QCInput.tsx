@@ -1,4 +1,4 @@
-import { Input } from "antd";
+import { Form, Input } from "antd";
 import { Controller, useFormContext } from "react-hook-form";
 
 
@@ -10,11 +10,12 @@ const QCInput = ({type,name,label}:TInputProps) => {
    
     return   <div >
 
-    {label ? label:null}
     <Controller
     name={name}
       render={({field})=>(
+       <Form.Item label={label}> 
         <Input type={type} {...field} id={name} />
+        </Form.Item>
       )}
 />
    
