@@ -18,7 +18,7 @@ const QCSelect = ({ label, name,options }: QCSelectProps) => {
     return (
         <Controller
             name={name}
-            render={({field}) => (<Form.Item label={label}>
+            render={({field,fieldState:{error}}) => (<Form.Item label={label}>
 
                 <Select
                 {...field}
@@ -26,6 +26,7 @@ const QCSelect = ({ label, name,options }: QCSelectProps) => {
                     options={options}
                     size='large'
                 />
+                {error && <small style={{color:"red"}}>{error.message}</small>}
             </Form.Item>)}
         />
 
