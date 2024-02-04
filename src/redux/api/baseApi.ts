@@ -22,14 +22,8 @@ const baseQueryWithRefreshToken:BaseQueryFn<FetchArgs,BaseQueryApi,DefinitionTyp
     let result = await baseQuery(args, api, extraOptions)
 
 if(result?.error?.status === 404){
- return   toast.error("user not found")
+ return   toast.error(result?.error?.data.message)
 }
-
-
-
-
-
-
 
 
     //if access token expaire
@@ -45,7 +39,7 @@ if(result?.error?.status === 404){
         const newAccessToken = data?.data?.accessToken;
 
         if(newAccessToken){
-            const user = api.getState().auth.user;
+            const user = (api.getState()as RootState).auth.user;
 
             api.dispatch(setUser({ user, token: newAccessToken }))
             result = await baseQuery(args, api, extraOptions)
