@@ -3,6 +3,7 @@ import { BaseQueryApi, BaseQueryFn, DefinitionType, FetchArgs, createApi, fetchB
 import { logOut, setUser } from "../features/auth/authSlice";
 import { RootState } from "../store";
 import { toast } from "sonner";
+import { TResponse } from "../../types/global";
 
 const baseQuery = fetchBaseQuery({
     baseUrl: "http://localhost:5000/api/v1",
@@ -19,10 +20,10 @@ const baseQuery = fetchBaseQuery({
 })
 
 const baseQueryWithRefreshToken:BaseQueryFn<FetchArgs,BaseQueryApi,DefinitionType> = async (args, api, extraOptions) :Promise<any>=> {
-    let result = await baseQuery(args, api, extraOptions)
+    let result = await baseQuery(args, api, extraOptions) 
 
 if(result?.error?.status === 404){
- return   toast.error(result?.error?.data.message)
+ return   toast.error((result as TResponse)?.error?.data.message)
 }
 
 
