@@ -4,6 +4,7 @@ import { logOut, setUser } from "../features/auth/authSlice";
 import { RootState } from "../store";
 import { toast } from "sonner";
 import { TResponse } from "../../types/global";
+import { TAcademicSemester } from "../../types/academicmManagement.type";
 
 const baseQuery = fetchBaseQuery({
     baseUrl: "http://localhost:5000/api/v1",
@@ -23,7 +24,7 @@ const baseQueryWithRefreshToken:BaseQueryFn<FetchArgs,BaseQueryApi,DefinitionTyp
     let result = await baseQuery(args, api, extraOptions) 
 
 if(result?.error?.status === 404){
- return   toast.error((result as TResponse)?.error?.data.message)
+ return   toast.error((result as TResponse<TAcademicSemester>)?.error?.data.message)
 }
 
 

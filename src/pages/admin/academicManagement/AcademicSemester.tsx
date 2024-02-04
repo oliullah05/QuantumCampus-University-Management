@@ -6,68 +6,68 @@ interface DataType {
     name: string;
     age: number;
     address: string;
-  }
+}
 const AcademicSemester = () => {
 
-    const {data:semesterData}= useGetAllSemestersQuery(undefined)
+    const { data: semesterData } = useGetAllSemestersQuery(undefined)
 
-const tableData = semesterData?.data.map(({_id,name,startMonth,endMonth,year}) =>({
-_id,
-name,
-startMonth,
-endMonth,
-year
+    const tableData = semesterData?.data?.map(({ _id, name, startMonth, endMonth, year }) => ({
+        _id,
+        name,
+        startMonth,
+        endMonth,
+        year
 
-}))
+    }))
 
-      
-      const columns: TableColumnsType<DataType> = [
+
+    const columns: TableColumnsType<DataType> = [
         {
-          title: 'Name',
-          dataIndex: 'name',
-          filters: [
-            {
-              text: 'Joe',
-              value: 'Joe',
-            },
-            {
-              text: 'Jim',
-              value: 'Jim',
-            },
-            {
-              text: 'Submenu',
-              value: 'Submenu',
-              children: [
+            title: 'Name',
+            dataIndex: 'name',
+            filters: [
                 {
-                  text: 'Green',
-                  value: 'Green',
+                    text: 'Joe',
+                    value: 'Joe',
                 },
                 {
-                  text: 'Black',
-                  value: 'Black',
+                    text: 'Jim',
+                    value: 'Jim',
                 },
-              ],
-            },
-          ],
+                {
+                    text: 'Submenu',
+                    value: 'Submenu',
+                    children: [
+                        {
+                            text: 'Green',
+                            value: 'Green',
+                        },
+                        {
+                            text: 'Black',
+                            value: 'Black',
+                        },
+                    ],
+                },
+            ],
         },
         {
-          title: 'Year',
-          dataIndex: 'year',
+            title: 'Year',
+            dataIndex: 'year',
         },
         {
-          title: 'Start Month',
-          dataIndex: 'startMonth',
+            title: 'Start Month',
+            dataIndex: 'startMonth',
         },
         {
-          title: 'End Month',
-          dataIndex: 'endMonth',
+            title: 'End Month',
+            dataIndex: 'endMonth',
         },
-      ];
+    ];
 
 
-      const onChange: TableProps<DataType>['onChange'] = (pagination, filters, sorter, extra) => {
+    const onChange: TableProps<DataType>['onChange'] = (pagination, filters, sorter, extra) => {
         console.log(filters);
-      };
+    };
 
 
 
