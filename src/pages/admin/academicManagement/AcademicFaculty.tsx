@@ -1,12 +1,9 @@
-import React from 'react';
-
 const AcademicFaculty = () => {
-    return (
-        <div>
-            AcademicFaculty
-AcademicFaculty
-        </div>
-    );
+  return (
+    <div>
+      <h1> This is AcademicFaculty component </h1>
+    </div>
+  );
 };
 
 export default AcademicFaculty;

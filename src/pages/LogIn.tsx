@@ -1,73 +1,59 @@
-import { Button, Row } from "antd";
-import { FieldValues, useForm, useFormContext } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
-import QCForm from "../components/form/QCForm";
-import { useLogInMutation } from "../redux/features/auth/authApi";
-import { useAppDispatch } from "../redux/hooks";
-import QCInput from "../components/form/QCInput";
-import { toast } from "sonner";
-import { verifyToken } from "../utils/verifyToken";
-import { setUser } from "../redux/features/auth/authSlice";
-const LogIn = () => {
-    const [login] = useLogInMutation()
-const dispatch = useAppDispatch()
-const navigate = useNavigate()
+import { Button, Row } from 'antd';
+import { FieldValues } from 'react-hook-form';
+import { useLoginMutation } from '../redux/features/auth/authApi';
+import { useAppDispatch } from '../redux/hooks';
+import { TUser, setUser } from '../redux/features/auth/authSlice';
+import { verifyToken } from '../utils/verifyToken';
+import { useNavigate } from 'react-router-dom';
+import { toast } from 'sonner';
+import PHForm from '../components/form/PHForm';
+import PHInput from '../components/form/PHInput';
 
+const Login = () => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
+  // const { register, handleSubmit } = useForm({
+  //   defaultValues: {
+  //     userId: 'A-0002',
+  //     password: 'admin123',
+  //   },
+  // });
 
+  const defaultValues = {
+    userId: 'A-0001',
+    password: 'admin123',
+  };
 
-    const { register, handleSubmit } = useForm({
-        defaultValues:{
-            userId:"A-0003",
-            password:"111111"
-        }
-    })
+  const [login] = useLoginMutation();
 
-// const {clearErrors} =useFormContext()
-
-
-
-    const onSubmit =async (data:FieldValues) => {
+  const onSubmit = async (data: FieldValues) => {
     console.log(data);
-     const toastId =    toast.loading("Loggin in")
-       try{
-        const userInfo = {
-            id:data.userId,
-            password:data.password
-        }
+    const toastId = toast.loading('Logging in');
 
-   const res =   await login(userInfo).unwrap();
-   const user = verifyToken(res.data.accessToken) as TUser
-   dispatch(setUser({user,token:res.data.accessToken}))
-   toast.success("log in successfully",{id:toastId,duration:1500})
-   navigate(`/${user.role}/dashboard`)
-   
-       }
-       catch(err){
-        toast.error("something went wrong",{id:toastId,duration:1500})
-       }
-
-
+    try {
+      const userInfo = {
+        id: data.userId,
+        password: data.password,
+      };
+      const res = await login(userInfo).unwrap();
+      const user = verifyToken(res.data.accessToken) as TUser;
+      dispatch(setUser({ user: user, token: res.data.accessToken }));
+      toast.success('Logged in', { id: toastId, duration: 2000 });
+      navigate(`/${user.role}/dashboard`);
+    } catch (err) {
+      toast.error('Something went wrong', { id: toastId, duration: 2000 });
     }
+  };
 
-
-
-
-
-
-
-    return (
-        <Row justify="center" align="middle" style={{height:"100vh"}}>
-        <QCForm onSubmit={onSubmit}>
-            {/* <label htmlFor="id">ID:</label> */}
-            <QCInput type="text" name="userId" label={"id"}></QCInput>
-           
-            {/* <input type="text" id="id" {...register("userId")} /> */}
-            {/* <label htmlFor="text">ID:</label> */}
-         <QCInput type="text" name="password" label={"password"}></QCInput>
-            <Button htmlType="submit">LogIn</Button>
-        </QCForm>
-        </Row>
-    );
+  return (
+    <Row justify="center" align="middle" style={{ height: '100vh' }}>
+      <PHForm onSubmit={onSubmit} defaultValues={defaultValues}>
+        <PHInput type="text" name="userId" label="ID:" />
+        <PHInput type="text" name="password" label="Password" />
+        <Button htmlType="submit">Login</Button>
+      </PHForm>
+    </Row>
+  );
 };
 
-export default LogIn;
+export default Login;
