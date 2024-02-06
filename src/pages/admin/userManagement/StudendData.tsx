@@ -8,12 +8,12 @@ export type TTableData = Pick<
 >;
 
 const StudentData = () => {
-  const [params, setParams] = useState<TQueryParam[] | undefined>(undefined);
+  const [params, setParams] = useState<TQueryParam[] >([]);
   const {
     data: studentData,
     isLoading,
     isFetching,
-  } = useGetAllStudentsQuery(params);
+  } = useGetAllStudentsQuery([{name:"limit",value:3},...params]);
 
   console.log({ isLoading, isFetching });
 
