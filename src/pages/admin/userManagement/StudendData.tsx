@@ -2,27 +2,30 @@ import { Button, Pagination, Space, Table, TableColumnsType, TableProps } from '
 import { useState } from 'react';
 import { useGetAllStudentsQuery } from '../../../redux/features/admin/userManagement.api';
 import { TQueryParam, TStudent } from '../../../types';
+import { Link } from 'react-router-dom';
 
 export type TTableData = Pick<
-  TStudent,"fullName"| "id"
+  TStudent,"fullName"| "id"|"email"|"contactNo"
 >;
 
 const StudentData = () => {
+    const [page,setPage]=useState(1)
   const [params, setParams] = useState<TQueryParam[] >([]);
-  const [page,setPage]=useState(3)
   const {
     data: studentData,
     isLoading,
     isFetching,
-  } = useGetAllStudentsQuery([{name:"limit",value:5},{name:"sort",value:"id"},{name:"page",value:page},...params]);
+  } = useGetAllStudentsQuery([{name:"sort",value:"id"},{name:"page",value:page},...params]);
 
  const metaData = studentData?.meta;
 
   const tableData = studentData?.data?.map(
-    ({ _id, fullName,id  }) => ({
+    ({ _id, fullName,id ,email,contactNo }) => ({
       key: _id,
       fullName,
-    id
+    id,
+    email,
+    contactNo
     })
   );
 
@@ -39,13 +42,24 @@ const StudentData = () => {
       dataIndex: 'id',
     },
     {
+      title: 'Email.',
+      key: 'email',
+      dataIndex: 'email',
+    },
+    {
+      title: 'Contact Number.',
+      key: 'contactNo',
+      dataIndex: 'contactNo',
+    },
+    {
       title: 'Action',
       key: 'x',
-      render: () => {
+      render: (item) => {
+        console.log(item,7777);
         return (
           <Space>
+          <Link to={item?.key}>  <Button>Details</Button></Link>
             <Button>Update</Button>
-            <Button>Details</Button>
             <Button>Block</Button>
           </Space>
         );
