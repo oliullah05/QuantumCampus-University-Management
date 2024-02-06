@@ -46,7 +46,13 @@ import { Button } from "antd";
 const CreateStudent = () => {
 
 const onSubmit:SubmitHandler<FieldValues> = (data)=>{
-console.log(data);
+// console.log(data);
+const formData = new FormData();
+formData.append("data", JSON.stringify(data))
+// formData.append("something", "data of some thing")
+// console.log(formData.get("something"));
+// console.log([...formData.entries()]);
+console.log(Object.fromEntries(formData));
 }
 
   return (
