@@ -30,12 +30,49 @@ const studentDummyData = {
     },
 
 
-    admissionSemester: '65afa54e77f3279bbfbbd384',
-    academicDepartment: '65afa56677f3279bbfbbd387',
+    // admissionSemester: '65afa54e77f3279bbfbbd384',
+    // academicDepartment: '65afa56677f3279bbfbbd387',
     profileImg: 'https://picsum.photos/250/350',
     isDeleted: false
   }
 }
+
+
+const defaultValues = {
+  name: { firstName: 'Stu 1', middleName: 'Smitdfh', lastName: 'Doe' },
+  gender: 'female',
+  bloogGroup: 'O+',
+
+
+  email: 'mokter2mokter@gmail.com',
+  contactNo: '11111',
+  emergencyContactNo: '+147896325',
+  presentAddress: '789 Park Avenue',
+  permanentAddress: '123 Main Street',
+
+
+  guardian: {
+    fatherName: 'John Doe',
+    fatherOccupation: 'Software Engineer',
+    fatherContactNo: '+147896325',
+    motherName: 'Mary Smith',
+    motherOccupation: 'Nurse',
+    motherContactNo: '+5432109876'
+  },
+  localGuardian: {
+    name: 'Peter d Jones',
+    occupation: 'Doctor',
+    contactNo: '+3216549870',
+    address: '456 Elm Street'
+  },
+
+
+  // admissionSemester: '65afa54e77f3279bbfbbd384',
+  // academicDepartment: '65afa56677f3279bbfbbd387',
+  profileImg: 'https://picsum.photos/250/350',
+  isDeleted: false
+}
+
 
 
 import { FieldValues, SubmitHandler } from "react-hook-form";
@@ -44,11 +81,21 @@ import PHInput from "../../../components/form/PHInput";
 import { Button, Col, Divider, Row } from "antd";
 import PHSelect from "../../../components/form/PHSelect";
 import { bloodGroupOptions, genderOptions } from "../../../types";
+import PHDatePicker from "../../../components/form/PHDatePicker";
+import { useGetAllSemestersQuery } from "../../../redux/features/admin/academicManagement.api";
 
 
 
 
 const CreateStudent = () => {
+
+  const { data: semesterData, isLoading: semesterLoding } = useGetAllSemestersQuery(undefined)
+  const semesterOptions = semesterData?.data?.map(item => ({
+    value: item._id,
+    label: `${item.name} ${item.year}`
+  }))
+  console.log(semesterOptions);
+
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
     console.log(data);
@@ -65,7 +112,7 @@ const CreateStudent = () => {
   return (
     <Row>
       <Col span={24}>
-        <PHForm onSubmit={onSubmit}>
+        <PHForm defaultValues={defaultValues} onSubmit={onSubmit}>
           <Divider>Personal Info.</Divider>
           <Row gutter={8}>
             <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -78,7 +125,7 @@ const CreateStudent = () => {
             <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
               <PHSelect options={genderOptions} name="gender" label="Gender" /></Col>
             <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
-              <PHInput type="text" name="dateOfBirth" label="Date Of Birth" /></Col>
+              <PHDatePicker name="dateOfBirth" label="Date Of Birth" /></Col>
             <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
               <PHSelect options={bloodGroupOptions} name="bloogGroup" label="Blood Group" /></Col>
 
@@ -121,9 +168,11 @@ const CreateStudent = () => {
 
             <Divider>Academic Info.</Divider>
             <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
-              <PHInput type="text" name="admissionSemester" label="Admission Semester" /></Col>
+              <PHSelect disabled={semesterLoding} options={semesterOptions} name="admissionSemester"  label="Admission Semester" />
+            </Col>
+
             <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
-              <PHInput type="text" name="academicDepartment" label="Academic Department" /></Col>
+              <PHSelect  name="academicDepartment" label="Academic Department" /></Col>
             <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
               <PHInput type="text" name="profileImg" label="Profile Img." /></Col>
 
