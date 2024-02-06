@@ -44,7 +44,7 @@ const defaultValues = {
   bloogGroup: 'O+',
 
 
-  email: 'mokter2mokter@gmail.com',
+  email: 'mokter2xc zxczcmokter@gmail.com',
   contactNo: '11111',
   emergencyContactNo: '+147896325',
   presentAddress: '789 Park Avenue',
@@ -82,27 +82,50 @@ import { Button, Col, Divider, Row } from "antd";
 import PHSelect from "../../../components/form/PHSelect";
 import { bloodGroupOptions, genderOptions } from "../../../types";
 import PHDatePicker from "../../../components/form/PHDatePicker";
-import { useGetAllSemestersQuery } from "../../../redux/features/admin/academicManagement.api";
+import { useGetAcademicDepartmentsQuery, useGetAllSemestersQuery } from "../../../redux/features/admin/academicManagement.api";
+import { useAddStudentMutation } from "../../../redux/features/admin/userManagement.api";
 
 
 
 
 const CreateStudent = () => {
-
+  const [addStudent,{data,error}] = useAddStudentMutation()
+  console.log({data,error});
   const { data: semesterData, isLoading: semesterLoding } = useGetAllSemestersQuery(undefined)
+  const { data: departmentData, isLoading: departmentLoding } = useGetAcademicDepartmentsQuery(undefined)
+
+  // console.log(semesterLoding);
   const semesterOptions = semesterData?.data?.map(item => ({
     value: item._id,
     label: `${item.name} ${item.year}`
   }))
-  console.log(semesterOptions);
+  // console.log(semesterOptions);
+  const departmentOptions = departmentData?.data?.map(item => ({
+    value: item._id,
+    label: `${item.name}`
+  }))
+  // console.log(semesterOptions);
 
 
   const onSubmit: SubmitHandler<FieldValues> = (data) => {
-    console.log(data);
+const studentData = {
+  password:"student123",
+  student:data
+}
 
 
-    // const formData = new FormData();
-    // formData.append("data", JSON.stringify(data))
+    const formData = new FormData();
+    formData.append("data", JSON.stringify(studentData))
+
+    addStudent(formData)
+
+
+
+
+
+
+
+
     // formData.append("something", "data of some thing")
     // console.log(formData.get("something"));
     // console.log([...formData.entries()]);
@@ -168,11 +191,11 @@ const CreateStudent = () => {
 
             <Divider>Academic Info.</Divider>
             <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
-              <PHSelect disabled={semesterLoding} options={semesterOptions} name="admissionSemester"  label="Admission Semester" />
+              <PHSelect disabled={semesterLoding} options={semesterOptions} name="admissionSemester" label="Admission Semester" />
             </Col>
 
             <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
-              <PHSelect  name="academicDepartment" label="Academic Department" /></Col>
+              <PHSelect options={departmentOptions} name="academicDepartment" label="Academic Department" /></Col>
             <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
               <PHInput type="text" name="profileImg" label="Profile Img." /></Col>
 
