@@ -9,11 +9,12 @@ export type TTableData = Pick<
 
 const StudentData = () => {
   const [params, setParams] = useState<TQueryParam[] >([]);
+  const [page,setPage]=useState(3)
   const {
     data: studentData,
     isLoading,
     isFetching,
-  } = useGetAllStudentsQuery([{name:"limit",value:3},...params]);
+  } = useGetAllStudentsQuery([{name:"limit",value:3},{name:"sort",value:"id"},{name:"page",value:page},...params]);
 
   console.log({ isLoading, isFetching });
 
