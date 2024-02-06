@@ -5,7 +5,7 @@ const defaultValues = {
   bloogGroup: 'O+',
 
 
-  email: 'mokter2xc zxczcmokter@gmail.com',
+  email: 'moktesxdfASdfASdfASokter@gmail.com',
   contactNo: '11111',
   emergencyContactNo: '+147896325',
   presentAddress: '789 Park Avenue',
@@ -28,18 +28,15 @@ const defaultValues = {
   },
 
 
-  // admissionSemester: '65afa54e77f3279bbfbbd384',
-  // academicDepartment: '65afa56677f3279bbfbbd387',
-  profileImg: 'https://picsum.photos/250/350',
   isDeleted: false
 }
 
 
 
-import { FieldValues, SubmitHandler } from "react-hook-form";
+import { Controller, FieldValues, SubmitHandler } from "react-hook-form";
 import PHForm from "../../../components/form/PHForm";
 import PHInput from "../../../components/form/PHInput";
-import { Button, Col, Divider, Row } from "antd";
+import { Button, Col, Divider, Form, Input, Row } from "antd";
 import PHSelect from "../../../components/form/PHSelect";
 import { bloodGroupOptions, genderOptions } from "../../../types";
 import PHDatePicker from "../../../components/form/PHDatePicker";
@@ -74,9 +71,10 @@ const studentData = {
   student:data
 }
 
-
+console.log(data);
     const formData = new FormData();
     formData.append("data", JSON.stringify(studentData))
+    formData.append("file", data.profileImg)
 
     addStudent(formData)
 
@@ -112,6 +110,12 @@ const studentData = {
               <PHDatePicker name="dateOfBirth" label="Date Of Birth" /></Col>
             <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
               <PHSelect options={bloodGroupOptions} name="bloogGroup" label="Blood Group" /></Col>
+              
+            <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
+            <Controller  name="profileImg" render={({field:{onChange,value,...field}})=><Form.Item label="Picture"> 
+            <Input type="file" {...field} value={value?.fileName} onChange={(e)=>onChange(e.target?.files?.[0])}/></Form.Item>}/>
+             
+              </Col>
 
             <Divider>Contact Info.</Divider>
             <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
@@ -157,8 +161,7 @@ const studentData = {
 
             <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
               <PHSelect options={departmentOptions} name="academicDepartment" label="Academic Department" /></Col>
-            <Col span={24} md={{ span: 12 }} lg={{ span: 8 }}>
-              <PHInput type="text" name="profileImg" label="Profile Img." /></Col>
+           
 
 
           </Row>
