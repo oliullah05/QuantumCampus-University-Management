@@ -1,4 +1,4 @@
-import { Button, Table, TableColumnsType, Tag } from 'antd';
+import { Button, Dropdown, Table, TableColumnsType, Tag } from 'antd';
 import { TAcademicSemester } from '../../../types/academicManagement.type';
 import { useGetAllRegisteredSemestersQuery } from '../../../redux/features/admin/courseManagement.api';
 import moment from 'moment';
@@ -8,6 +8,26 @@ export type TTableData = Pick<
   TSemester,
  'startDate' | 'endDate' | "status"
 >;
+
+
+const items: MenuProps['items'] = [
+  {
+    label: "Upcoming",
+    key: 'UPCOMING',
+  },
+  {
+    label: "Ongoing",
+    key: 'ONGOING',
+  },
+  {
+    label: "Ended",
+    key: 'ENDED',
+  },
+];
+
+
+
+
 
 const RegisteredSemesters = () => {
 const {data:semesterData,isLoding,isFetching}=useGetAllRegisteredSemestersQuery(undefined)
@@ -21,6 +41,14 @@ const {data:semesterData,isLoding,isFetching}=useGetAllRegisteredSemestersQuery(
       status
     })
   );
+const handleStatusDropdown = (data)=>{
+console.log(data);
+}
+
+const menuProps ={
+items,
+onClick:handleStatusDropdown
+}
 
   const columns: TableColumnsType<TTableData> = [
     {
@@ -33,7 +61,17 @@ const {data:semesterData,isLoding,isFetching}=useGetAllRegisteredSemestersQuery(
       key: 'status',
       dataIndex: 'status',
       render:(item)=>{
-       return <Tag>{item}</Tag>
+        let color;
+        if(item==="ONGOING"){
+            color="green"
+        }
+        if(item==="UPCOMING"){
+            color="blue"
+        }
+        if(item==="ENDED"){
+            color="blue"
+        }
+       return <Tag color={color}>{item}</Tag>
       }
     },
     {
@@ -50,10 +88,13 @@ const {data:semesterData,isLoding,isFetching}=useGetAllRegisteredSemestersQuery(
       title: 'Action',
       key: 'x',
       render: () => {
+
+
+
         return (
-          <div>
-            <Button>Update</Button>
-          </div>
+          <Dropdown menu={menuProps}>
+            <Button >Update</Button>
+          </Dropdown>
         );
       },
     },
