@@ -1,0 +1,301 @@
+[
+    {
+        "category": {
+            "name": "individual"
+        },
+        "id": 1,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 1"
+    },
+    {
+        "category": {
+            "name": "preset",
+            "data":[
+                {
+                    "id": 3,
+                    "price": 10,
+                    "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+                    "name": "Product 3",
+                    "type": "dress",
+                    "companyName": [
+                        "Nitril",
+                        "Latex",
+                        "Vinyl"
+                    ],
+                    "size": [
+                        "S",
+                        "M",
+                        "L",
+                        "XL"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "price": 10,
+                    "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+                    "name": "Product 3",
+                    "type": "dress",
+                    "companyName": [
+                        "Nitril",
+                        "Latex",
+                        "Vinyl"
+                    ],
+                    "size": [
+                        "S",
+                        "M",
+                        "L",
+                        "XL"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "price": 10,
+                    "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+                    "name": "Product 3",
+                    "type": "dress",
+                    "companyName": [
+                        "Nitril",
+                        "Latex",
+                        "Vinyl"
+                    ],
+                    "size": [
+                        "S",
+                        "M",
+                        "L",
+                        "XL"
+                    ]
+                }
+            ]
+        },
+        "id": 2,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 2",
+        "type": "drinks",
+        "ml": [
+            100,
+            200,
+            300
+        ]
+    },
+
+
+
+
+
+
+
+
+    
+    {
+        "id": 3,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 3",
+        "type": "dress",
+        "companyName": [
+            "Nitril",
+            "Latex",
+            "Vinyl"
+        ],
+        "size": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ]
+    },
+    {
+        "id": 4,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 4"
+    },
+    {
+        "id": 5,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 5",
+        "type": "drinks",
+        "ml": [
+            100,
+            200,
+            300
+        ]
+    },
+    {
+        "id": 6,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 6",
+        "type": "dress",
+        "companyName": [
+            "Nitril",
+            "Latex",
+            "Vinyl"
+        ],
+        "size": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ]
+    },
+    {
+        "id": 7,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 7"
+    },
+    {
+        "id": 8,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 8",
+        "type": "drinks",
+        "ml": [
+            100,
+            200,
+            300
+        ]
+    },
+    {
+        "id": 9,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 9",
+        "type": "dress",
+        "companyName": [
+            "Nitril",
+            "Latex",
+            "Vinyl"
+        ],
+        "size": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ]
+    },
+    {
+        "id": 10,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 10"
+    },
+    {
+        "id": 11,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 11"
+    },
+    {
+        "id": 12,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 12",
+        "type": "drinks",
+        "ml": [
+            100,
+            200,
+            300
+        ]
+    },
+    {
+        "id": 13,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 13",
+        "type": "dress",
+        "companyName": [
+            "Nitril",
+            "Latex",
+            "Vinyl"
+        ],
+        "size": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ]
+    },
+    {
+        "id": 14,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 14"
+    },
+    {
+        "id": 15,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 15",
+        "type": "drinks",
+        "ml": [
+            100,
+            200,
+            300
+        ]
+    },
+    {
+        "id": 16,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 16",
+        "type": "dress",
+        "companyName": [
+            "Nitril",
+            "Latex",
+            "Vinyl"
+        ],
+        "size": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ]
+    },
+    {
+        "id": 17,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 17"
+    },
+    {
+        "id": 18,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 18",
+        "type": "drinks",
+        "ml": [
+            100,
+            200,
+            300
+        ]
+    },
+    {
+        "id": 19,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 19",
+        "type": "dress",
+        "companyName": [
+            "Nitril",
+            "Latex",
+            "Vinyl"
+        ],
+        "size": [
+            "S",
+            "M",
+            "L",
+            "XL"
+        ]
+    },
+    {
+        "id": 20,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 20"
+    }
+]

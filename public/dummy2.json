@@ -1,0 +1,557 @@
+[
+    {
+        "category": {
+            "name": "individual"
+        },
+        "id": 1,
+        "price": 10,
+        "img": "https://w7.pngwing.com/pngs/84/1006/png-transparent-lotion-vaseline-petroleum-jelly-cream-lip-balm-vaseline-cosmetics-gel-cocoa-butter-thumbnail.png",
+        "name": "Product 1"
+    },
+    {
+        "category": {
+            "name": "individual"
+        },
+        "id": 2,
+        "price": 15,
+        "img": "https://example.com/product2.png",
+        "name": "Product 2"
+    },
+    {
+        "category": {
+            "name": "individual"
+        },
+        "id": 3,
+        "price": 20,
+        "img": "https://example.com/product3.png",
+        "name": "Product 3"
+    },
+    {
+        "category": {
+            "name": "individual"
+        },
+        "id": 4,
+        "price": 25,
+        "img": "https://example.com/product4.png",
+        "name": "Product 4"
+    },
+    {
+        "category": {
+            "name": "individual"
+        },
+        "id": 5,
+        "price": 30,
+        "img": "https://example.com/product5.png",
+        "name": "Product 5"
+    },
+    {
+        "category": {
+            "name": "individual"
+        },
+        "id": 6,
+        "price": 12,
+        "img": "https://example.com/product6.png",
+        "name": "Product 6"
+    },
+    {
+        "category": {
+            "name": "individual"
+        },
+        "id": 7,
+        "price": 18,
+        "img": "https://example.com/product7.png",
+        "name": "Product 7"
+    },
+    {
+        "category": {
+            "name": "individual"
+        },
+        "id": 8,
+        "price": 22,
+        "img": "https://example.com/product8.png",
+        "name": "Product 8"
+    },
+
+
+
+
+
+
+
+
+
+
+    {
+        "category": {
+            "name": "preset",
+            "data":[
+                {
+                    "id": 1,
+                    "price": 15,
+                    "img": "https://example.com/product1.png",
+                    "name": "Product 1",
+                    "type": "shirt",
+                    "companyName": [
+                        "Cotton Co.",
+                        "Silk Style",
+                        "Polyester Paradise"
+                    ],
+                    "size": [
+                        "XS",
+                        "S",
+                        "M",
+                        "L"
+                    ]
+                },
+                {
+                    "id": 2,
+                    "price": 25,
+                    "img": "https://example.com/product2.png",
+                    "name": "Product 2",
+                    "type": "pants",
+                    "companyName": [
+                        "Denim Delight",
+                        "Chino Choice",
+                        "Slim Fit Fabrics"
+                    ],
+                    "size": [
+                        "28",
+                        "30",
+                        "32",
+                        "34"
+                    ]
+                },
+                {
+                    "id": 3,
+                    "price": 12,
+                    "img": "https://example.com/product3.png",
+                    "name": "Product 3",
+                    "type": "hat",
+                    "companyName": [
+                        "Sun Shield",
+                        "Urban Cap",
+                        "Adventure Gear"
+                    ],
+                    "size": [
+                        "One Size"
+                    ]
+                },
+                {
+                    "id": 4,
+                    "price": 8,
+                    "img": "https://example.com/product4.png",
+                    "name": "Product 4",
+                    "type": "socks",
+                    "companyName": [
+                        "Comfort Cotton",
+                        "Sporty Stripes",
+                        "Casual Crew"
+                    ],
+                    "size": [
+                        "S",
+                        "M",
+                        "L"
+                    ]
+                },
+                {
+                    "id": 5,
+                    "price": 20,
+                    "img": "https://example.com/product5.png",
+                    "name": "Product 5",
+                    "type": "shoes",
+                    "companyName": [
+                        "Sneaker Street",
+                        "Formal Footwear",
+                        "Adventure Boots"
+                    ],
+                    "size": [
+                        "7",
+                        "8",
+                        "9",
+                        "10"
+                    ]
+                }
+            ]
+        },
+        "id": 6,
+        "price": 18,
+        "img": "https://example.com/product6.png",
+        "name": "Product 6",
+        "type": "accessories",
+        "ml": [
+            50,
+            100,
+            150
+        ]
+    },
+    {
+        "category": {
+            "name": "preset",
+            "data":[
+                {
+                    "id": 7,
+                    "price": 30,
+                    "img": "https://example.com/product7.png",
+                    "name": "Product 7",
+                    "type": "jacket",
+                    "companyName": [
+                        "WinterWarm",
+                        "TechShield",
+                        "FashionFury"
+                    ],
+                    "size": [
+                        "S",
+                        "M",
+                        "L",
+                        "XL"
+                    ]
+                },
+                {
+                    "id": 8,
+                    "price": 15,
+                    "img": "https://example.com/product8.png",
+                    "name": "Product 8",
+                    "type": "gloves",
+                    "companyName": [
+                        "LeatherLux",
+                        "SportGrip",
+                        "ColdDefender"
+                    ],
+                    "size": [
+                        "Small",
+                        "Medium",
+                        "Large"
+                    ]
+                },
+                {
+                    "id": 9,
+                    "price": 25,
+                    "img": "https://example.com/product9.png",
+                    "name": "Product 9",
+                    "type": "scarf",
+                    "companyName": [
+                        "CozyWrap",
+                        "StyleSnug",
+                        "WinterChic"
+                    ],
+                    "size": [
+                        "One Size"
+                    ]
+                }
+            ]
+        },
+        "id": 10,
+        "price": 12,
+        "img": "https://example.com/product10.png",
+        "name": "Product 10",
+        "type": "sunglasses",
+        "ml": [
+            "Small",
+            "Medium",
+            "Large"
+        ]
+    },
+    
+    {
+        "category": {
+            "name": "preset",
+            "data":[
+                {
+                    "id": 11,
+                    "price": 18,
+                    "img": "https://example.com/product11.png",
+                    "name": "Product 11",
+                    "type": "watch",
+                    "companyName": [
+                        "TimeTrend",
+                        "SmartStyle",
+                        "LuxuryCraft"
+                    ],
+                    "size": [
+                        "Small",
+                        "Medium",
+                        "Large"
+                    ]
+                },
+                {
+                    "id": 12,
+                    "price": 22,
+                    "img": "https://example.com/product12.png",
+                    "name": "Product 12",
+                    "type": "backpack",
+                    "companyName": [
+                        "AdventureGear",
+                        "UrbanExplorer",
+                        "TechTravels"
+                    ],
+                    "size": [
+                        "Small",
+                        "Medium",
+                        "Large"
+                    ]
+                },
+                {
+                    "id": 13,
+                    "price": 14,
+                    "img": "https://example.com/product13.png",
+                    "name": "Product 13",
+                    "type": "umbrella",
+                    "companyName": [
+                        "RainGuard",
+                        "WeatherShield",
+                        "CityBrella"
+                    ],
+                    "size": [
+                        "Compact",
+                        "Standard",
+                        "Golf"
+                    ]
+                },
+                {
+                    "id": 14,
+                    "price": 28,
+                    "img": "https://example.com/product14.png",
+                    "name": "Product 14",
+                    "type": "headphones",
+                    "companyName": [
+                        "AudioBliss",
+                        "TechTunes",
+                        "BassBeats"
+                    ],
+                    "size": [
+                        "On-Ear",
+                        "Over-Ear",
+                        "In-Ear"
+                    ]
+                }
+            ]
+        },
+        "id": 15,
+        "price": 16,
+        "img": "https://example.com/product15.png",
+        "name": "Product 15",
+        "type": "gadget",
+        "ml": [
+            64,
+            128,
+            256
+        ]
+    },
+    {
+        "category": {
+            "name": "preset",
+            "data":[
+                {
+                    "id": 16,
+                    "price": 35,
+                    "img": "https://example.com/product16.png",
+                    "name": "Product 16",
+                    "type": "smartphone",
+                    "companyName": [
+                        "TechTrend",
+                        "MobileMasters",
+                        "InnovatePhones"
+                    ],
+                    "size": [
+                        "64GB",
+                        "128GB",
+                        "256GB"
+                    ]
+                },
+                {
+                    "id": 17,
+                    "price": 40,
+                    "img": "https://example.com/product17.png",
+                    "name": "Product 17",
+                    "type": "laptop",
+                    "companyName": [
+                        "PowerPulse",
+                        "UltraBook",
+                        "ProTech"
+                    ],
+                    "size": [
+                        "13-inch",
+                        "15-inch",
+                        "17-inch"
+                    ]
+                },
+                {
+                    "id": 18,
+                    "price": 20,
+                    "img": "https://example.com/product18.png",
+                    "name": "Product 18",
+                    "type": "tablet",
+                    "companyName": [
+                        "TabTech",
+                        "SlimScreen",
+                        "ePad"
+                    ],
+                    "size": [
+                        "10-inch",
+                        "12-inch"
+                    ]
+                }
+            ]
+        },
+        "id": 19,
+        "price": 25,
+        "img": "https://example.com/product19.png",
+        "name": "Product 19",
+        "type": "speaker",
+        "ml": [
+            "Small",
+            "Medium",
+            "Large"
+        ]
+    }
+,
+{
+    "category": {
+        "name": "apparel",
+        "data":[
+            {
+                "id": 21,
+                "price": 28,
+                "img": "https://example.com/apparel1.png",
+                "name": "Apparel 1",
+                "type": "t-shirt",
+                "companyName": [
+                    "CasualCotton",
+                    "GraphicStyle",
+                    "ComfortFit"
+                ],
+                "size": [
+                    "XS",
+                    "S",
+                    "M",
+                    "L",
+                    "XL"
+                ]
+            },
+            {
+                "id": 22,
+                "price": 35,
+                "img": "https://example.com/apparel2.png",
+                "name": "Apparel 2",
+                "type": "jeans",
+                "companyName": [
+                    "DenimDream",
+                    "SlimFitStyles",
+                    "ClassicCraft"
+                ],
+                "size": [
+                    "28",
+                    "30",
+                    "32",
+                    "34",
+                    "36"
+                ]
+            },
+            {
+                "id": 23,
+                "price": 18,
+                "img": "https://example.com/apparel3.png",
+                "name": "Apparel 3",
+                "type": "hoodie",
+                "companyName": [
+                    "CozyComfort",
+                    "StreetStyle",
+                    "WinterWarmth"
+                ],
+                "size": [
+                    "S",
+                    "M",
+                    "L",
+                    "XL"
+                ]
+            }
+        ]
+    },
+    "id": 24,
+    "price": 22,
+    "img": "https://example.com/apparel4.png",
+    "name": "Apparel 4",
+    "type": "socks",
+    "ml": [
+        "Small",
+        "Medium",
+        "Large"
+    ]
+},
+{
+    "category": {
+        "name": "apparel",
+        "data":[
+            {
+                "id": 21,
+                "price": 28,
+                "img": "https://example.com/apparel1.png",
+                "name": "Apparel 1",
+                "type": "t-shirt",
+                "companyName": [
+                    "CasualCotton",
+                    "GraphicStyle",
+                    "ComfortFit"
+                ],
+                "size": [
+                    "XS",
+                    "S",
+                    "M",
+                    "L",
+                    "XL"
+                ]
+            },
+            {
+                "id": 22,
+                "price": 35,
+                "img": "https://example.com/apparel2.png",
+                "name": "Apparel 2",
+                "type": "jeans",
+                "companyName": [
+                    "DenimDream",
+                    "SlimFitStyles",
+                    "ClassicCraft"
+                ],
+                "size": [
+                    "28",
+                    "30",
+                    "32",
+                    "34",
+                    "36"
+                ]
+            },
+            {
+                "id": 23,
+                "price": 18,
+                "img": "https://example.com/apparel3.png",
+                "name": "Apparel 3",
+                "type": "hoodie",
+                "companyName": [
+                    "CozyComfort",
+                    "StreetStyle",
+                    "WinterWarmth"
+                ],
+                "size": [
+                    "S",
+                    "M",
+                    "L",
+                    "XL"
+                ]
+            }
+        ]
+    },
+    "id": 24,
+    "price": 22,
+    "img": "https://example.com/apparel4.png",
+    "name": "Apparel 4",
+    "type": "socks",
+    "ml": [
+        "Small",
+        "Medium",
+        "Large"
+    ]
+}
+
+
+
+]
